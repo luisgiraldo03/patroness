@@ -9,6 +9,8 @@ public class TipoItem {
     this.Descripcion = descripcion;
   }
 
+  public TipoItem() {}
+
   public int getId() {
     return Id;
   }

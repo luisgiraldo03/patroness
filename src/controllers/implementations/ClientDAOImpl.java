@@ -25,18 +25,31 @@ public class ClientDAOImpl implements IClienteDAO {
   }
 
   @Override
-  public void updateCliente(Cliente facturaVieja, Cliente datos) {
-    if (!storage.actualizar("client", facturaVieja, datos)) System.err.println("Error actualizando el cliente");
+  public void updateCliente(Cliente clienteViejo, Cliente datos) {
+    if (!storage.actualizar("client", clienteViejo, datos)) {
+      System.err.println("Error actualizando el cliente");
+      return;
+    }
+
+    System.out.println("Cliente actualizado correctamente");
   }
 
   @Override
   public void deleteCliente(Cliente cliente) {
-    if (!storage.eliminar("client", cliente)) System.err.println("Error eliminando el cliente");
+    if (!storage.eliminar("client", cliente)) {
+      System.err.println("Error eliminando el cliente");
+      return;
+    }
+    System.out.println("Cliente borrado");
   }
 
   @Override
   public void addCliente(Cliente cliente) {
-    if(!storage.escribir("client", cliente)) System.err.println("Error al añadir el cliente");
+    if(!storage.escribir("client", cliente)) {
+      System.err.println("Error al añadir el cliente");
+      return;
+    }
+    System.out.println("Cliente guardado");
   }
 
   @Override

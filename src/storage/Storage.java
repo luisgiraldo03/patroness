@@ -30,19 +30,27 @@ public class Storage {
     try {
       switch (tabla) {
         case "client":
-          ClientStorage.add((Cliente) datos);
+          Cliente cliente = (Cliente) datos;
+          cliente.setId(ClientIdCount);
+          ClientStorage.add(cliente);
           ClientIdCount++;
           break;
         case "item":
-          ItemStorage.add((Item) datos);
+          Item item = (Item) datos;
+          item.setId(ItemIdCount);
+          ItemStorage.add(item);
           ItemIdCount++;
           break;
         case "tipoItem":
-          TipoItemStorage.add((TipoItem) datos);
+          TipoItem tipoItem = (TipoItem) datos;
+          tipoItem.setId(TipoItemIdCount);
+          TipoItemStorage.add(tipoItem);
           TipoItemIdCount++;
           break;
         case "factura":
-          FacturaStorage.add((Factura) datos);
+          Factura factura = (Factura) datos;
+          factura.setNumeroFactura(FacturaIdCount);
+          FacturaStorage.add(factura);
           FacturaIdCount++;
           break;
         default:

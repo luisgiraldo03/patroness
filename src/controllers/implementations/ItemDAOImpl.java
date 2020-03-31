@@ -27,17 +27,32 @@ public class ItemDAOImpl implements IItemDAO {
 
   @Override
   public void updateItem(Item itemViejo, Item item) {
-    if (!storage.actualizar("item", itemViejo, item)) System.err.println("Error al actualizar el item");
+    if (!storage.actualizar("item", itemViejo, item)) {
+      System.err.println("Error al actualizar el item");
+      return;
+    }
+
+    System.out.println("Item actualizado");
   }
 
   @Override
   public void deleteItem(Item item) {
-    if (!storage.eliminar("item", item)) System.err.println("Error al eliminar la tabla");
+    if (!storage.eliminar("item", item)) {
+      System.err.println("Error al eliminar la tabla");
+      return;
+    }
+
+    System.out.println("Item borrado");
   }
 
   @Override
   public void addItem(Item item) {
-    if (!storage.escribir("item", item)) System.err.println("Error al guardar el item");
+    if (!storage.escribir("item", item)) {
+      System.err.println("Error al guardar el item");
+      return;
+    }
+
+    System.out.println("Item añadido");
   }
 
   @Override

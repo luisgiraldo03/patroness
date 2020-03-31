@@ -48,8 +48,16 @@ public class Cliente {
     return Genero;
   }
 
-  public void setGenero(String genero) {
-    Genero = genero;
+  public void setGenero(int genero) {
+    switch (genero) {
+      case 1:
+        Genero = "Hombre";
+        break;
+      case 2:
+        Genero = "Mujer";
+      default:
+        System.out.println("La opción no es admitida");
+    }
   }
 
   public String getFechaNacimiento() {
@@ -64,7 +72,18 @@ public class Cliente {
     return EstadoCivil;
   }
 
-  public void setEstadoCivil(String estadoCivil) {
-    EstadoCivil = estadoCivil;
+  public void setEstadoCivil(int estadoCivil) {
+    switch (estadoCivil) {
+      case 1:
+        EstadoCivil = "soltero";
+        break;
+      case 2:
+        EstadoCivil = "Casado";
+      case 3:
+        EstadoCivil = "Union libre";
+        break;
+      default:
+        System.out.println("Opción incorrecta");
+    }
   }
 }

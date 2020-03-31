@@ -4,7 +4,7 @@ public class Item {
   public int Id;
   private TipoItem TipoItem;
   private String Descripcion;
-  private int ValorUnitario;
+  private float ValorUnitario;
 
   public Item(int id, TipoItem tipoItem, String descripcion, int valorUnitario) {
     this.Id = id;
@@ -12,6 +12,8 @@ public class Item {
     this.Descripcion = descripcion;
     this.ValorUnitario = valorUnitario;
   }
+
+  public Item() {}
 
   public int getId() {
     return Id;
@@ -37,11 +39,11 @@ public class Item {
     Descripcion = descripcion;
   }
 
-  public int getValorUnitario() {
+  public float getValorUnitario() {
     return ValorUnitario;
   }
 
-  public void setValorUnitario(int valorUnitario) {
+  public void setValorUnitario(float valorUnitario) {
     ValorUnitario = valorUnitario;
   }
 }

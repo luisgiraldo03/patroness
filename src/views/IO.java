@@ -1,5 +1,6 @@
 package views;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class IO {
@@ -23,6 +24,13 @@ public class IO {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         break;
     }
+  }
+
+  public void waitKey() {
+    System.out.println("Presiona enter para continuar");
+    try {
+      System.in.read();
+    } catch (IOException e) {}
   }
 
   public Scanner resetTeclado() {

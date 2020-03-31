@@ -11,10 +11,10 @@ public interface IClienteDAO {
 
   /**
    * Update old client with new data
-   * @param facturaVieja Old object storage in the database
+   * @param clienteViejo Old object storage in the database
    * @param datos New data to update
    */
-  public void updateCliente(Cliente facturaVieja, Cliente datos);
+  public void updateCliente(Cliente clienteViejo, Cliente datos);
 
   /**
    * Delete a client for Data base

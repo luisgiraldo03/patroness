@@ -20,6 +20,13 @@ public class Factura {
     this.Items = new ArrayList<Item>();
   }
 
+  public Factura() {
+    this.FechaFactura = new Date();
+    this.TotalFactura = 0;
+    this.Estado = new Estado(0, EstadoType.Pendiente, "");
+    this.Items = new ArrayList<Item>();
+  }
+
   public int getNumeroFactura() {
     return NumeroFactura;
   }
@@ -58,7 +65,12 @@ public class Factura {
   }
 
   public Item[] getAllItems() {
-    return (Item[]) Items.toArray();
+    Object[] items = Items.toArray();
+    Item[] itemsAssambler = new Item[items.length];
+    for (int i = 0; i < items.length; i++) {
+      itemsAssambler[i] = (Item) items[i];
+    }
+    return itemsAssambler;
   }
 
   public Item getItem(Item item) {
